@@ -1,6 +1,6 @@
 # 567-Final-Project
 
-## TODO ([issues](https://github.com/blakete/567-Final-Project/issues) & (project)[https://github.com/blakete/567-Final-Project/projects/1]):
+## TODO ([issues](https://github.com/blakete/567-Final-Project/issues) & [project](https://github.com/blakete/567-Final-Project/projects/1)):
 - Create Python script to parse raw datafiles and turn into plottable JSON objects
 - Create Python flask API to get most recent data to plot
 - Add Axios to Vue frontend, create frontend store actions, call backend on created to populate chart data
