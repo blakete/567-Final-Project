@@ -1,5 +1,5 @@
 <template>
-  <div class=chartContainer>
+  <div class="chartContainer">
     <canvas id="combo-chart"></canvas>
   </div>
 </template>

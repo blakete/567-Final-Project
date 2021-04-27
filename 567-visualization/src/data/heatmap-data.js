@@ -512,6 +512,14 @@ export const heatmapChartData = {
   options: {
     responsive: true,
     maintainAspectRatio: false,
+    title: {
+      display: true,
+      text: "Workouts by Time of Day",
+      fontSize: 25,
+    },
+    legend: {
+      position: "bottom",
+    },
   }
 };
 

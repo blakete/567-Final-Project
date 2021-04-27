@@ -17,16 +17,17 @@ export default {
       radarChartData: {
         type: "polarArea",
         data: {
-          labels: ["Red", "Green", "Yellow", "Grey", "Blue"],
+          labels: ["Running", "Walking", "Cycling", "Elliptical", "Rowing", "Other"],
           datasets: [
             {
               label: "My First Dataset",
-              data: [11, 16, 7, 3, 14],
+              data: [22, 16, 7, 3, 3, 20],
               backgroundColor: [
                 "rgb(255, 99, 132)",
                 "rgb(75, 192, 192)",
-                "rgb(255, 205, 86)",
+                "rgb(245, 230, 66)",
                 "rgb(201, 203, 207)",
+                "rgb(245, 167, 66)",
                 "rgb(54, 162, 235)",
               ],
             },
