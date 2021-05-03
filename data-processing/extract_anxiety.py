@@ -95,7 +95,7 @@ for index, row in anxiety_df.iterrows():
             date_dict[key] = (curr_ttl+value, cnt+1)
         else:
             date_dict[key] = (value, 1)
-print("check avgs")
+            
 date = []
 avg = []
 for key in date_dict:
@@ -106,6 +106,6 @@ for key in date_dict:
 
 # save average daily anxiety to clean CSV
 avg_anxiety = pd.DataFrame(list(zip(date, avg)), columns=["Date", "Anxiety"])
-avg_anxiety.to_csv("./processed-data/avg_daily_anxiety.csv")
+avg_anxiety.to_csv("./processed-data/avg-daily-anxiety.csv")
 
 
