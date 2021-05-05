@@ -6,7 +6,7 @@
 - Add Axios to Vue frontend, create frontend store actions, call backend on created to populate chart data
 
 ## Current state:
-![Screen Shot 2021-04-27 at 1 26 46 AM](https://user-images.githubusercontent.com/49415344/116189918-b17fae80-a6f7-11eb-97a1-4fb2cf92e2f5.png)
+<img width="1378" alt="Screen Shot 2021-05-04 at 11 22 38 PM" src="https://user-images.githubusercontent.com/49415344/117093672-a2b87d80-ad2f-11eb-9194-1213ad0ff0e6.png">
 
 ## Running data processing scripts
 1) activate the Python3.8 virtual environment:
