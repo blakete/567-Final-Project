@@ -1,6 +1,6 @@
 # 567-visualization
 
-## Project setup
+## Local Project setup
 ```
 npm install
 ```
