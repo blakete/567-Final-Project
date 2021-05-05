@@ -55,6 +55,10 @@ export const comboChartData = {
     scales: {
       yAxes: [{
         id: 'A',
+        scaleLabel: {
+          display: true,
+          labelString: 'Symptoms',
+        },
         type: 'linear',
         position: 'left',
         ticks: {
@@ -63,6 +67,10 @@ export const comboChartData = {
       }, 
       {
         id: 'B',
+        scaleLabel: {
+          display: true,
+          labelString: 'Calories Burned',
+        },
         type: 'linear',
         position: 'right',
         ticks: {
@@ -71,6 +79,10 @@ export const comboChartData = {
       },
       {
         id: 'C',
+        scaleLabel: {
+          display: true,
+          labelString: 'Total Workout(s) Duration (minutes)',
+        },
         type: 'linear',
         position: 'right',
         ticks: {

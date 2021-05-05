@@ -76,7 +76,7 @@ for index, row in anxiety_df.iterrows():
             total += 1
             anxiety_df.drop(index, inplace=True)
             
-print("Total dropped days: ", total/4)
+print("Total dropped days: ", total/4) # 4 records per day
 print("size after: ", anxiety_df.shape)
 
 # result: 4 days in this range have < 3 logs
