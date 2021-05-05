@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # PARSE perceived-symptoms.csv
 # load csv
-ps_df = pd.read_csv("./raw-data/perceived-symptoms.csv")
+ps_df = pd.read_csv("./raw-data/export.csv")
 # get the date, period, anxiety columns
 anxiety_df = ps_df[["Date", "Period", "Anxiety"]].copy()
 
@@ -35,8 +35,8 @@ period_delta = {
 }
 for index,row in anxiety_df.iterrows():
     date, period, value = row["Date"], row["Period"], row["Anxiety"]
-    month, day, year = date.split("/")
-    year = int(year) + 2000
+    year, month, day = date.split("-")
+    year = int(year)
     month = int(month)
     day = int(day)
     dt = datetime.datetime(year, month, day)
@@ -44,13 +44,14 @@ for index,row in anxiety_df.iterrows():
     anxiety_df.at[index, "Date"] = dt + period_delta[period]
 anxiety_df.drop("Period", axis=1, inplace=True)
 
+
 # drop all rows outside of 01/12/21 - 03/23/21
 print("size before: ", anxiety_df.shape)
-end = datetime.datetime(2021, 3, 23)
+end = datetime.datetime(2021, 3, 24)
 start = datetime.datetime(2021, 1, 12)
 for index, row in anxiety_df.iterrows():
     date, value = row["Date"], row["Anxiety"]
-    if end < date or date < start :
+    if end < date or date <= start :
         anxiety_df.drop(index, inplace=True)
 print("size after: ", anxiety_df.shape)
 
@@ -71,13 +72,13 @@ for index, row in anxiety_df.iterrows():
     date = row["Date"]
     key = str(date.date())
     if key in date_dict:
-        if date_dict[key] > 1:
-            print("dropping: ", key)
+        if date_dict[key] > 2:
             total += 1
             anxiety_df.drop(index, inplace=True)
             
 print("Total dropped days: ", total/4)
 print("size after: ", anxiety_df.shape)
+
 # result: 4 days in this range have < 3 logs
 
 # save anxiety annotations to clean CSV
@@ -95,7 +96,7 @@ for index, row in anxiety_df.iterrows():
             date_dict[key] = (curr_ttl+value, cnt+1)
         else:
             date_dict[key] = (value, 1)
-            
+
 date = []
 avg = []
 for key in date_dict:

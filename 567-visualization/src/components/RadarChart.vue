@@ -17,11 +17,11 @@ export default {
       radarChartData: {
         type: "polarArea",
         data: {
-          labels: ["Running", "Walking", "Cycling", "Elliptical", "Rowing", "Other"],
+          labels: ["Walk", "Run", "Strength", "Cycle"],
           datasets: [
             {
               label: "My First Dataset",
-              data: [22, 16, 7, 3, 3, 20],
+              data: [0.5932112259682684, 0.2359570718498529, 0.15939779892542208, 0.01143390325645686],
               backgroundColor: [
                 "rgb(255, 99, 132)",
                 "rgb(75, 192, 192)",
@@ -38,7 +38,7 @@ export default {
           maintainAspectRatio: false,
           title: {
             display: true,
-            text: "Workout Type",
+            text: "Exercise Type by Calories Burned",
             fontSize: 25,
           },
           legend: {

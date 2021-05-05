@@ -8,7 +8,7 @@ import xmltodict
 raw_workouts = pd.read_csv("./raw-data/workouts.csv")
 
 # drop all uneeded columns
-raw_workouts.drop(["Unnamed: 0", "@durationUnit", "@durationUnit", "@totalDistanceUnit", "@totalDistance", "@sourceName", "@sourceVersion", "@device", "@startDate", "@endDate", "MetadataEntry", "WorkoutEvent", "WorkoutRoute"], axis=1, inplace=True)
+raw_workouts.drop(["Unnamed: 0", "@durationUnit", "@durationUnit", "@totalDistanceUnit", "@totalDistance", "@sourceName", "@sourceVersion", "@device", "@startDate", "@endDate", "MetadataEntry", "WorkoutEvent"], axis=1, inplace=True)
 
 # drop outside date range, change dates to dt obj, change type to our own string
 end = datetime.datetime(2021, 3, 23)
@@ -61,3 +61,25 @@ for key in date_dict:
     sumCalories.append(date_dict[key][1])
 workoutSums = pd.DataFrame(list(zip(dates, sumDurations, sumCalories)), columns=["Date", "Sum Duration", "Sum Calories"])
 workoutSums.to_csv("./processed-data/sum-daily-workouts.csv")
+
+
+# get workout type duration summations for radar chart
+workout_type_dict = {}
+totalDuration = 0
+workouts = []
+percentDuration = []
+for index, row in raw_workouts.iterrows():
+    wType, duration = row["Type"], row["Calories"]
+    totalDuration += duration
+    if wType in workout_type_dict:
+        workout_type_dict[wType] += duration
+    else: 
+        workout_type_dict[wType] = duration 
+
+for key in workout_type_dict:
+    workouts.append(key)
+    percentDuration.append(workout_type_dict[key]/totalDuration)
+
+# print("Workout types and durations:")
+# print("labels: [" + ", ".join(["\""+str(elem)+"\"" for elem in workouts]) + "]")
+# print("data: [" + ", ".join([str(elem) for elem in percentDuration]) + "]")

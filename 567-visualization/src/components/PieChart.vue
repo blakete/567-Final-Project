@@ -21,7 +21,7 @@ export default {
           datasets: [
             {
               label: "My First Dataset",
-              data: [300, 50],
+              data: [37, 117],
               backgroundColor: [
                 "rgb(255, 99, 132)",
                 "rgb(54, 162, 235)"
