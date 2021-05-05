@@ -21,7 +21,7 @@ export default {
           datasets: [
             {
               label: "My First Dataset",
-              data: [37, 117],
+              data: [768.0362422009308, 3035.7235439380024],
               backgroundColor: [
                 "rgb(255, 99, 132)",
                 "rgb(54, 162, 235)"
@@ -35,7 +35,7 @@ export default {
           maintainAspectRatio: false,
           title: {
             display: true,
-            text: "Inside vs. Outside Workout Duration Total",
+            text: "Inside vs. Outside Workouts Total Minutes",
             fontSize: 25,
           },
           legend: {

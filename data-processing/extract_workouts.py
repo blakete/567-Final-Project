@@ -63,23 +63,26 @@ workoutSums = pd.DataFrame(list(zip(dates, sumDurations, sumCalories)), columns=
 workoutSums.to_csv("./processed-data/sum-daily-workouts.csv")
 
 
-# get workout type duration summations for radar chart
+# get workout type calories summations for radar chart
 workout_type_dict = {}
-totalDuration = 0
+total = 0
 workouts = []
-percentDuration = []
+totalCalories = []
+percentCalories = []
 for index, row in raw_workouts.iterrows():
-    wType, duration = row["Type"], row["Calories"]
-    totalDuration += duration
+    wType, calories = row["Type"], row["Calories"]
+    total += calories
     if wType in workout_type_dict:
-        workout_type_dict[wType] += duration
+        workout_type_dict[wType] += calories
     else: 
-        workout_type_dict[wType] = duration 
+        workout_type_dict[wType] = calories 
 
 for key in workout_type_dict:
     workouts.append(key)
-    percentDuration.append(workout_type_dict[key]/totalDuration)
+    totalCalories.append(workout_type_dict[key])
+    percentCalories.append(workout_type_dict[key]/total)
 
-# print("Workout types and durations:")
-# print("labels: [" + ", ".join(["\""+str(elem)+"\"" for elem in workouts]) + "]")
-# print("data: [" + ", ".join([str(elem) for elem in percentDuration]) + "]")
+print("Workout types, total calories, and percent total calories:")
+print("labels: [" + ", ".join(["\""+str(elem)+"\"" for elem in workouts]) + "]")
+print("data: [" + ", ".join([str(elem) for elem in totalCalories]) + "]")
+print("data: [" + ", ".join([str(elem) for elem in percentCalories]) + "]")

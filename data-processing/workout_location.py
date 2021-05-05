@@ -9,10 +9,10 @@ workouts = pd.read_csv("./processed-data/workouts.csv")
 indoor = 0
 outdoor = 0
 for index, row in workouts.iterrows():
-    route = row["WorkoutRoute"]
+    route, duration = row["WorkoutRoute"], row["Duration"]
     if pd.isnull(route):
-        indoor += 1
+        indoor += duration
     else:
-        outdoor += 1
+        outdoor += duration
 
-print("Indoor workouts: "+ str(indoor) + "\nOutdoor workouts: " + str(outdoor)) 
+print("Indoor workouts total duration: "+ str(indoor) + "\nOutdoor workouts total duration: " + str(outdoor)) 

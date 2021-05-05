@@ -2140,7 +2140,7 @@ export const heatmapChartData = {
       maintainAspectRatio: false,
       title: {
          display: true,
-         text: "Workouts by Time of Day",
+         text: "Workout Type by Time of Day",
          fontSize: 25,
       },
       legend: {

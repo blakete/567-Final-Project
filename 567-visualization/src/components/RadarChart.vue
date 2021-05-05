@@ -21,7 +21,7 @@ export default {
           datasets: [
             {
               label: "My First Dataset",
-              data: [0.5932112259682684, 0.2359570718498529, 0.15939779892542208, 0.01143390325645686],
+              data: [15517.415776522988, 6172.243256739937, 4169.580431912951, 299.0918293722107],
               backgroundColor: [
                 "rgb(255, 99, 132)",
                 "rgb(75, 192, 192)",
@@ -38,7 +38,7 @@ export default {
           maintainAspectRatio: false,
           title: {
             display: true,
-            text: "Exercise Type by Calories Burned",
+            text: "Exercise Type by Total Calories Burned",
             fontSize: 25,
           },
           legend: {
