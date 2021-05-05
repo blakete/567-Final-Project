@@ -1,6 +1,6 @@
-# 567-visualization
+# 567-visualization - Local Host Setup Instructions
 
-## Local Project setup
+## Project setup
 ```
 npm install
 ```
