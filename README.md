@@ -1,7 +1,7 @@
 # 567-Final-Project
 
 ## Current state:
-<img width="1378" alt="Screen Shot 2021-05-04 at 11 22 38 PM" src="https://user-images.githubusercontent.com/49415344/117093672-a2b87d80-ad2f-11eb-9194-1213ad0ff0e6.png">
+<img width="1379" alt="Screen Shot 2021-05-04 at 11 46 02 PM" src="https://user-images.githubusercontent.com/49415344/117094854-e791e380-ad32-11eb-8443-5a3ed93d580a.png">
 
 ## Running data processing scripts
 1) activate the Python3.8 virtual environment:
